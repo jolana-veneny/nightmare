@@ -1,5 +1,7 @@
 # gdb-gef
 
+This file had contributed by `deveynull`
+
 We already went through GDB, but now we are going to learn about GDB with debugging symbols.
 
 A Debugging Symbol Table maps instructions in the compiled binary program to their corresponding variable, function, or line in the source code. This mapping could be something like:
@@ -202,3 +204,4 @@ gef➤  x/s greeting
 ```
 
 Alright, there is plenty other things you can do, but this should help you to troubleshoot effectively as you write your C.
+

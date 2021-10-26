@@ -1,5 +1,7 @@
 # gdb-gef
 
+This file was contributed to by `deveynull` (also made the hello_world binary)
+
 So throughout this project, we will be using a lot of different tools. The purpose of this module is to show you some of the basics of three of those tools. We will start with gdb-gef.
 
 First off, gdb is a debugger (specifically the gnu debugger). Gef is an a gdb wrapper, designed  to give us some extended features (https://github.com/hugsy/gef). To install it, you can find the instructions on the github page. it's super simple.
@@ -516,3 +518,4 @@ Continuing at 0x0x08048451.
 ```
 
 That was a lot, keep referring to this, your notes, and GDB cheatsheets as you go along. 
+
