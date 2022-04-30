@@ -161,6 +161,8 @@ With a bit of math, we see the offset:
 '0x48'
 ```
 
+As a fun note, on some systems this offset winds up being 0x40 instead of 0x48. This means that one exploit does not fit all, and in the real world if you were exploiting a bunch of systems you'd have to do some work to figure out which exploit to throw on which target... and you'd have to worry about crashing systems and.... real world is a complicated place. 
+
 We can also find the offset from the start of our input to the saved return address in ghidra. At the start of the function, it will display the stack layout. It will address the various variables on the stack with the offset to the saved return address. We see that `input` is addressed at `-0x48`, so it is `0x48` bytes away from the saved return address. I have seen some instances where Ghidra gets this wrong, but it is always good to know multiple ways to accomplish the same thing.
 
 ```
@@ -198,15 +200,49 @@ target.sendline(payload)
 target.interactive()
 ```
 
-When we run it. This might crash on the `system("cat flag.txt")` if you are running it on a more modern version of Ubuntu. If it does, ignore it and move on, consider this challenge solved (as long as you are successfully calling the `easy` function). This is because the challenge was made to run in a different environment/libc version, and exploitation techniques that work one way in one environment work differently in others:
+When we run it. This might crash on the `system("cat flag.txt")` if you are running it on a more modern version of libc. This is because the challenge was made to run in a different environment/libc version, and exploitation techniques that work one way in one environment work differently in others.
+
+To learn more about the fault, use `dmesg | tail` to find information: 
+
 ```
-$    python3 exploit.py
-[+] Starting local process './warmup': pid 4652
-[*] Switching to interactive mode
--Warm Up-
-WOW:0x40060d
->flag{g0ttem_b0yz}
-[*] Got EOF while reading in interactive
+[33123.778632] traps: warmup[19117] general protection fault ip:7f74564272d6 sp:7ffc62b86ab8 error:0 in libc-2.27.so[7f74563d8000+1e7000]
+[33123.902520] warmup[19116]: segfault at 0 ip 0000000000000000 sp 00007ffc62b86c68 error 14 in warmup[400000+1000]
+[33123.902536] Code: Bad RIP value.
+
+```
+This shows itself as a  general protection fault/Bad RIP value, which doesn't tell us much, but luckily, I'll tell you that this mostly means something called a "stack alignment" problem. 
+
+"Stack alignment" basically means that the stack assumes a specific thing and that assumption isn't true so it shuts things down. 
+
+In this specific "stack alignment" problem, the `system` call uses the instruction `movaps` with rsp as the dest address - `MOVAPS xmmword ptr [RSP + 0x50],XMM0`. If you get deeeeeep in the documentation you will find that the dest address of `movaps` must be a divisor of 16 or there will be a stack alignment fault. This is a good writeup on this fault: <https://research.csiro.au/tsblog/debugging-stories-stack-alignment-matters/>
+
+If it does crash (and it probably will on a modern system) verify the location of the crash in the `easy` function by running the program in GDB with the payload. To generate the payload we can print the output to a file.
+
+```
+f = open("payload", "wb")
+f.write(payload)
+f.close()
 ```
 
-Just like that, we got the flag! As a side note, I've heard of instances where in certain environments the offset is `0x40` instead of `0x48`.
+We can get that input into the program using GDB to verify.
+
+```
+$   gdb -q ./warmup 
+gef➤  b *main+134
+Breakpoint 1 at 0x4006a3
+gef➤  run < warmupPayload 
+Starting program: /home/devey/Documents/github/nightmare/modules/04-Overflows/05-bof_callfunction/csaw16_warmup/warmup < payload
+-Warm Up-
+WOW:0x40060d
+>
+gef➤ ni
+gef➤ ni
+
+
+```
+
+We should now see that we are in the easy function, but things are going to break and the flag won't be read. There are ways to work around this (one of which you'll learn in the next section)
+
+It's lame to not solve a problem, but it's a much more important lesson to learn that different libc's exist, stack alignment exists, and it can be exceptionally difficult to identify what is wrong. 
+
+Moral of the story to take away here is that computers are hard and sometimes things just wind up not being exploitable in the same way across systems.

@@ -28,13 +28,19 @@ Now that we understand the stack, let's learn how overflows work.
 
 If you are still not feeling 100% sure what you are supposed to do, don't worry, that is perfectly normal. Just move on and work through these first couple of writeups.
 
-### Crush Some Variables 
+### Crush Some Variable Overwrites
+
+This variety of overflow is very easy to understand, so we start with variable overwrites. 
+
+The core idea is very straightforward, a comparison is made against a variable the user is not expected to have control over, and using an overflow, we have overwritten that variable. Use the tools you've learned so far, especially Ghidra to figure out the write offsets. 
 
 3. Do your first overflow! [Challenge 1](04-bof_variable/tamu19_pwn1/)
 4. Next one up! [Challenge 2](04-bof_variable/tw17_justdoit/)
 5. This one is a bit harder [Challenge 3](04-bof_variable/csaw18_boi/)
 
 ### Call some Functions
+
+For this family of overflows, we'll be overwriting various addresses so that we can call target functions. 
 
 6. Work through [Aviv's Overflow Notes](unit_03.md). Really take the time to get your head wrapped around these problems. 
 7. Calling functions is pretty cool. [Challenge 4](05-bof_callfunction/csaw16_warmup/)

