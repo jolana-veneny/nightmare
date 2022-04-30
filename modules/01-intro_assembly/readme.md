@@ -29,9 +29,6 @@ CPU has to save data somewhere, right?
 <https://www.techwalla.com/articles/how-does-ram-work-with-the-cpu>
 
 
-#### VRAM 
-Keeping it very short, know that VRAM exists and is slightly different, though basically the same thing as RAM. It's just a virtual addressing system for the RAM that you'd already been using.
-
 ## Programs in Memory
 
 Programs in Memory
@@ -71,4 +68,4 @@ Finally, work through [the Aviv Assembly notes](unit_02.md) and do the assignmen
 
 Watch this video from the great hacker LiveOverflow on the [CPU and Assembler](https://www.youtube.com/watch?v=6jSKldt7Eqs). You'll be seeing more of his content.
 
-Read this and make sure it sort of makes sense: <https://revers.engineering/applied-re-basic-architecture/>. You can absolutely move on even if it doesn't.
+Read this and make sure it sort of makes sense: <https://revers.engineering/applied-re-basic-architecture/>. You absolutely should move on even if it doesn't.

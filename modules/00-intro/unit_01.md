@@ -1,5 +1,5 @@
 # Unit 1: C Programming and Compilation
-
+`From Aviv's 485H`
 # Hello World
 
 Let's start in the beginning: Hello World!
@@ -131,8 +131,7 @@ You can see, that yes, this program does actually compile by using the
 user@si485h-clone0:demo$ gcc -c -o hello.o hello.c
 ```
 
-This succeeds, and now we have an object file for `hello` and we need to
-provide more compiled code to complete the assembly process.
+This succeeds, and now we have an object file for `hello.o`. You can try to run `hello.o` but it won't work. `readelf` shows that it is a REL (Relocatable file). We need to provide more compiled code to complete the assembly process.
 Specifically, we need to provide code that fills in the `world()`
 function.
 
@@ -207,7 +206,7 @@ the real `main()` method of a program; Second, we don't know what `printf` or
 The second problem is solved more easily than the first --- we need the C
 library! That's right, when we included `stdio.h` and `stdlib.h` these are
 functions defined by the larger C library, and we need to link in the code for
-those functions. We can do this with `-lc` flag:
+those functions from libc <https://man7.org/linux/man-pages/man7/libc.7.html>. We can do this with the `-lc` flag:
 
 ```example
 aviv@si485h-clone0:demo$ ld -lc hello.o world.o -o hello
@@ -288,8 +287,8 @@ Fortunately, most 64-bit processors can execute 32-bit code, and `gcc` can
 compile into both variants, with the right flags. (There's always another flag
 for that in `gcc`!).
 
-In the compilation instructions, you'll notice that there is a flag `-m
-elf_x86_64`. The `-m` flag specifies the machine type to compile to. For our
+In the compilation instructions, you'll notice that there is a flag 
+`-m elf_x86_64`. The `-m` flag specifies the machine type to compile to. For our
 purposes, we can specify `-m32` (shorthand for `elf_x86`), and we can see we
 have a different kind of file now. 
 
@@ -342,7 +341,7 @@ Hello, world!
 
 And for simplicity in the notes, I will shorthand `gcc32` just to `gcc`, and you
 should assume that ALL `gcc` compilation is occurring in 32 bit mode with these
-options, unless otherwise specified. 
+options, unless otherwise specified. If you leave these security features on, many of the example programs you compile throughout will be non-exploitable. 
 
 
 # Library Functions vs. System Calls
@@ -472,7 +471,7 @@ write(1, "Hello World!\n", 13)                                                  
 ```
 
 The reason that `write()` still appears is that this `write()` is not
-the *real* system call `write()`, but is a library wrapper to it ... but
+the *real* system call `write()`, but is a library wrapper to it ...  (many library calls are simply wrappers for system calls and just provide a layer of abstraction) but
 that is a story for another day. What's more interesting is the
 `strace`, which if you observe closely, you will see is the same as the
 other version of the program.
@@ -550,8 +549,7 @@ long l=-889275714 size=4
 
 Notice that the long number is the same size as an integer, 4-bytes, as
 opposed to 8-bytes on 64 bit machines. This is because the registers on
-32 bit machines are 32 bits wide, and storing 8-byte values is annoying,
-at best. You can still have 8-byte values, but you have to use
+32 bit machines are 32 bits wide, and storing 8-byte values is annoying to 32 bit machines. You can still have 8-byte values, but you have to use
 `long long`.
 
 ## Signed Numeric Values
@@ -813,6 +811,8 @@ p=0xbffff6b8 &p=0xbffff6b4 *p=50
 user@si485h-clone0:demo$ 
 ```
 
+Unsurprisingly, this makes exploitation a lot more straightforward, but remember that you have it turned off when trying to exploit remote machines which possibly have it turned on! 
+
 # Arrays and Strings
 
 ## Array Values and Pointers are the same thing!
@@ -926,7 +926,7 @@ Ok, so if array values and pointers the same, why do we have array
 values? Well, I lied, just a bit. Array values and pointers are the same
 in the sense that they are both memory references, but the declaration
 of an array and the declaration of a pointer are **not** the same. When
-you declare an array, you are declare a region of memory all at once,
+you declare an array, you are declaring a region of memory all at once,
 and you must be able to always reference that memory, otherwise you'll
 have a memory leak. That is, an array value is immutable or constant ---
 it cannot change.
@@ -1013,7 +1013,7 @@ c+4=0xbffff69d *(c+4) = 14
 
 ## Strings
 
-C-strings(!!!!) the bane of student programmers worldwide, but they are
+C-strings(!!!!) the bane of student programmers worldwide (but the best friend of exploit devs), are
 not really that bad if you remember that string is simply an array of
 characters that is null terminated. In its most pedantic usage, we can
 declare a string as an array in the standard sense.
@@ -1125,7 +1125,7 @@ int main(int argc, char * argv){
 
 Here, we treat the integer `a` as a buffer of 4-bytes. If we write those
 bytes out indexed from 0 to 3, we see that the number 0xdeadbeef is
-written out in reveres, 0xef, 0xbe, 0xad, 0xde.
+written out in reverse, 0xef, 0xbe, 0xad, 0xde.
 
 ``` example
 user@si485h-clone0:demo$ ./endian 
@@ -1187,7 +1187,7 @@ Here's what each of these sections are used for:
     variables and command line arguments to the program.
 -   *stack*: the stack is for organizing the execution of the program
     into stack frames for tracing functions and local variables. Each
-    function call *pushes* a stack fram. from on the stack, and each
+    function call *pushes* a stack frame from on the stack, and each
     return *pops* off a stack frame. The stack grows towards lower
     addresses, into empty memory address space.
 -   *heap* : the heap is for dynamic, global memory allocations, such as

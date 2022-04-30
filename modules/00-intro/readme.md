@@ -1,5 +1,5 @@
 # Intro
-
+`Written by GuyInATuxedo`
 So I just want to say a few things for the people who are super new to binary exploitation / reverse engineering. If you are already familiar with assembly code / binary exploitation and reverse engineering, and tools like ghidra / pwntools / gdb, feel free to skip this whole section (and any other content you already know). The purpose of this section is to give an introduction to the super new people.
 
 ## Binary Exploitation
@@ -41,7 +41,7 @@ First off, I find it fun (if you don't find this fun, I wouldn't recommend doing
 One more thing I want to say is the difficulty curve, in my opinion, is like that of a roller coaster. There are certain parts that are easier, and certain parts that are harder. Granted, difficulty is relative to the person.
 
 # C, Compilation, and Binaries
-
+`Written By Roppers`
 Very briefly, we are going to do a quick refresher on the background info needed to understand what is going on in this course. As mentioned above, you don't need to be an expert in C or assembly, just have enough context and you will be able to figure it out. 
 
 1. Read this: <https://www.geeksforgeeks.org/compiling-a-c-program-behind-the-scenes/>. Compile step by step and understand what is going on. 

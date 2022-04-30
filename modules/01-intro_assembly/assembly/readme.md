@@ -149,7 +149,7 @@ Now we can see it is stored on the stack at `rbp-0x4`.
 
 Now values on the stack are moved on by either pushing them onto the stack, or popping them off. That is the only way to add or remove values from the stack, as it is a FILO(First In, Last Out) data structure. However, we can read and reference values on the stack at any time.
 
-The exact bounds of the stack is recorded by two registers, `rbp` and `rsp`. The base pointer `rbp` points to the bottom of the stack. The stack pointer `rsp` points to the top of the stack.
+The exact bounds of the stack frame is recorded by two registers, `rbp` and `rsp`. The base pointer `rbp` points to the bottom of the stack. The stack pointer `rsp` points to the top of the stack.
 
 ## Flags
 
@@ -178,9 +178,30 @@ There are other flags then the one listed, however we really don't deal with the
 
 If you want to hear more about this, check out: [Book on x86 Assembly and Architecture](https://en.wikibooks.org/wiki/X86_Assembly/X86_Architecture)
 
+## Instruction Sets and Syntaxes
+
+In this course we are primarily focused on x86 and x86-64, but that is just one family of many. To make it even more complicated, there is also competing Syntaxes. The two dominant syntaxes in the x86 world are Intel and AT&T. While the instructions are all the same, the way they are represented is completely different. 
+
+In this course, and the vast majority of other online resources, you will be working with Intel syntax.
+
+The way to tell the difference at a glance is AT&T is littered with % symbols while Intel syntax is (comparitively) a joy to look at.
+
+AT&T: movl $5, %eax
+Intel: mov eax, 5
+AT&T: addl $4, %esp
+Intel: add esp, 4
+
+The prosecution rests.
+
+The fundamental difference between the two is that Intel is (opcode) (destination) (source) while AT&T is (opcode) (source) (destination)
+
+All tools can switch between Syntaxes, but in this course we will always use Intel. Just remember if you ever see something with all those %s, you're looking at AT&T and need to turn on AT&T brain, kind of like driving on the opposite side of the road when you travel.
+
 ## Instructions
 
-Now we will be covering some of the more common instructions you will see. This isn't every instruction you will see, just the often used ones.
+Now that we've covered that, we will be covering some of the more common instructions you will see in x86 Intel syntax. This isn't even close to every instruction you will see, just the often used ones. There's an incredible number of instructions but there's only a few that are worth memorizing, the rest can go on cheat sheets or you can look them up as you go.
+
+For now, don't worry at all about memorization, let it happen naturally as you go.
 
 #### mov
 
@@ -245,7 +266,7 @@ This will perform the binary operation xor on the two arguments it is given, and
 xor rdx, rax
 ```
 
-This will set the `rdx` register equal to `rdx ^ rax`. If  the `xor` instruction is used with the same register for both argument, for example `xor rax, rax`, it will set all bits to zero, clearing the register.
+This will set the `rdx` register equal to `rdx ^ rax`. If  the `xor` instruction is used with the same register for both argument, for example `xor rax, rax`, it will set all bits to zero, clearing the register. This is the most used case for `xor`.
 
 To understand how `xor` works, you must understand that it is a *bitwise* operation, meaning it operates on the bits of a register. It compares the bits in each place, and sets the resulting bit to `1` if the bits are different, and `0` if they are the same. So for example, `xor 1011 1100` would return `0111`.
 

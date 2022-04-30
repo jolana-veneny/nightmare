@@ -24,34 +24,35 @@ Read this, understand this, just keep going back over this until it all makes se
 Now that we understand the stack, let's learn how overflows work.
 
 1. For an overview on overflows, watch this video: <https://www.youtube.com/watch?v=1S0aBV-Waeo&t=6s>
-2. Check out these slide decks on overflows from RPISec's MBE on overflows [Lecture 04](04_lecture.pdf) and [Lecture 04 Extras](04_lecture_extras.pdf). 
-3. Watch [this video from LiveOverflow](https://www.youtube.com/watch?v=T03idxny9jE) that should help you understand the mindset required for overflows.
-4. Work through [Aviv's Overflow Notes](unit_03.md). Really take the time to get your head wrapped around these problems. 
-5. Read this document ["Smashing the Stack for Fun and Profit"](http://www.phrack.org/issues/49/14.html#article) because it is famous. At the time this paper came out, the knowledge of the existence of buffer overflows was kept secret among a very small group of people. This is the first known document describing the dark magic that was released to the public. Now you are learning about it with a ton of examples on Github. Pretty dope.
+2. Watch [this video from LiveOverflow](https://www.youtube.com/watch?v=T03idxny9jE) that should help you understand the mindset required for overflows.
 
-If you are still not feeling 100% sure what you are supposed to do, don't worry, that is perfectly normal. Just move on and work through these writeups.
+If you are still not feeling 100% sure what you are supposed to do, don't worry, that is perfectly normal. Just move on and work through these first couple of writeups.
 
 ### Crush Some Variables 
 
 3. Do your first overflow! [Challenge 1](04-bof_variable/tamu19_pwn1/)
 4. Next one up! [Challenge 2](04-bof_variable/tw17_justdoit/)
-5. This one is a bit harder[Challenge 3](04-bof_variable/csaw18_boi/)
+5. This one is a bit harder [Challenge 3](04-bof_variable/csaw18_boi/)
 
 ### Call some Functions
 
-6. Calling functions is pretty cool. [Challenge 4](05-bof_callfunction/csaw16_warmup/)
-7. More CSAW challenges! [Challenge 5](05-bof_callfunction/csaw18_getit/)
-8. Vulnchats are classic problems. [Challenge 6](05-bof_callfunction/tu17_vulnchat/)
+6. Work through [Aviv's Overflow Notes](unit_03.md). Really take the time to get your head wrapped around these problems. 
+7. Calling functions is pretty cool. [Challenge 4](05-bof_callfunction/csaw16_warmup/)
+8. More CSAW challenges! [Challenge 5](05-bof_callfunction/csaw18_getit/)
+9. Vulnchats are classic problems. [Challenge 6](05-bof_callfunction/tu17_vulnchat/)
+ 
+# Historical Reading
 
+Read this document ["Smashing the Stack for Fun and Profit"](http://www.phrack.org/issues/49/14.html#article) because it is famous. At the time this paper came out, the knowledge of the existence of buffer overflows was kept secret among a very small group of people. This is the first known document describing the dark magic that was released to the public. Now you are learning about it with a ton of examples on Github. Pretty dope.
 
 # Shellcode 
 
 Calling functions is nice and all, but you know what's better? Calling our own code! Let's learn about shellcode! 
 
 0. Watch this video from LiveOverflow: <https://www.youtube.com/watch?v=HSlhY4Uy8SA>
-1. Read [MBE's shellcode lecture](05_lecture.pdf).
-2. Work through [Aviv's Shellcode Notes](unit_04.md). Take serious time on this. 
-3. Do your first shellcode exploit. [Challenge 7](06-bof_shellcode/csaw17_pilot/)
+1. Work Through [Aviv's Shellcode Notes Part1](unit_03_shell.md).
+2. Do your first shellcode exploit. [Challenge 7](06-bof_shellcode/csaw17_pilot/)
+3. Work through [Aviv's Shellcode Notes](unit_04.md). Take serious time on this. 
 4. Do another. REPS AND SETS. [Challenge 8](06-bof_shellcode/tamu19_pwn3/)
 5. Alright this one is a bit harder. [Challenge 9](06-bof_shellcode/tu18_shellaeasy/)
 
