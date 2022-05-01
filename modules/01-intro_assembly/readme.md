@@ -22,11 +22,13 @@ CPU has to save data somewhere, right?
 
 #### Registers: 
 
-<https://www.geeksforgeeks.org/different-classes-of-cpu-registers/>
+Check out [this lesson on Registers](assembly/registers.md):
+
+Then read this: <https://www.geeksforgeeks.org/different-classes-of-cpu-registers/>
 
 #### RAM
 
-<https://www.techwalla.com/articles/how-does-ram-work-with-the-cpu>
+Read [this article](https://www.techwalla.com/articles/how-does-ram-work-with-the-cpu) to get a more practical understanding of how RAM and CPUs work together.
 
 
 ## Programs in Memory
@@ -58,6 +60,8 @@ This section needs a bit more writing, but for now, read over the Wiki page, it'
 
 ## Assembly Tutorials
 
+In this course you will mostly be learning about x86 assembly in the Intel syntax. If that means nothing to you right now that is fine, you'll be an expert soon enough.
+
 [Click here to learn about x86 assembly.](assembly/readme.md)
 
 Once you have finished that check out [this tutorial on reversing assembly.](reversing_assembly/)
@@ -68,4 +72,4 @@ Finally, work through [the Aviv Assembly notes](unit_02.md) and do the assignmen
 
 Watch this video from the great hacker LiveOverflow on the [CPU and Assembler](https://www.youtube.com/watch?v=6jSKldt7Eqs). You'll be seeing more of his content.
 
-Read this and make sure it sort of makes sense: <https://revers.engineering/applied-re-basic-architecture/>. You absolutely should move on even if it doesn't.
+Read this and make sure it sort of makes sense: <https://revers.engineering/applied-re-basic-architecture/>. You absolutely should move on even if it doesn't, this whole course is meant to keep you moving forward before you understand exactly what is going on.

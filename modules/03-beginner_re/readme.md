@@ -35,8 +35,6 @@ Enough talking, let's start with some RE!
 The magic of Nightmare is getting reps and sets in, and that is what you are about to do. Follow these writeups and build that muscle memory.
 
 
-
-
 1. First, we are going to start with a fun CTF challenge that will take us on a whirlwind tour of x86: [Challenge 1](csaw18_x86tour_pt1/)
 
 2. Many RE challenges fall into the category of CrackMe's. I love this tutorial from Nora Codes. [Crack Me Collection](https://github.com/NoraCodes/crackmescrackmes/). Work through them and you will know what is needed to solve 50% of CrackMes you find in most competitions. When you get bored, move on, or stop at the 4th challenge. Can't have you spending too much time in one place. 

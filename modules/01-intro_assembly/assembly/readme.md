@@ -184,7 +184,7 @@ In this course we are primarily focused on x86 and x86-64, but that is just one 
 
 In this course, and the vast majority of other online resources, you will be working with Intel syntax.
 
-The way to tell the difference at a glance is AT&T is littered with % symbols while Intel syntax is (comparitively) a joy to look at.
+The way to tell the difference at a glance is AT&T is littered with % symbols while Intel syntax is (comparatively) a joy to look at.
 
 AT&T: movl $5, %eax
 Intel: mov eax, 5
@@ -200,6 +200,14 @@ All tools can switch between Syntaxes, but in this course we will always use Int
 ## Instructions
 
 Now that we've covered that, we will be covering some of the more common instructions you will see in x86 Intel syntax. This isn't even close to every instruction you will see, just the often used ones. There's an incredible number of instructions but there's only a few that are worth memorizing, the rest can go on cheat sheets or you can look them up as you go.
+
+A good rule is to have the 10-20 most common memorized and then to look up the rare instructions as you go. To start off, use cheat sheets.
+
+I'm a fan of this one but it is a bit long: <http://www.jegerlehner.ch/intel/IntelCodeTable.pdf>
+
+This one is much more manageable for right now: [Shorter x86 Cheatsheet](https://imgv2-2-f.scribdassets.com/img/document/21143282/original/46f3e4e2ca/1607612475?v=1)
+
+Overall, nobody has all of these things memorized ([the Intel reference documentation is literally 1000s of pages long](https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-instruction-set-reference-manual-325383.pdf)), but you can focus on memorizing the most common things, and get good at looking things up in cheat sheets and the official docs when you need them.
 
 For now, don't worry at all about memorization, let it happen naturally as you go.
 

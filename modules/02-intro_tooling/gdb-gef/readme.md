@@ -86,7 +86,7 @@ hello world!
 ```
 
 In order to enter debugger mode, we can set breakpoints. Breakpoints are places in the program where GDB will know to stop execution to allow you to examine the contents of the stack. 
-The most common breakpoint to set is on main, which we can set with 'break main' or 'b main'. Most GDB commands can be shortened. Check out this cheat sheet for more: <CHEATSHEET> 
+The most common breakpoint to set is on main, which we can set with 'break main' or 'b main'. Most GDB commands can be shortened. Check out this cheat sheet for more: [Shorter x86 Cheatsheet](https://imgv2-2-f.scribdassets.com/img/document/21143282/original/46f3e4e2ca/1607612475?v=1) 
 
 
 ```
