@@ -47,20 +47,20 @@ For this family of overflows, we'll be overwriting various addresses so that we 
 8. More CSAW challenges! [Challenge 5](05-bof_callfunction/csaw18_getit/)
 9. Vulnchats are classic problems. [Challenge 6](05-bof_callfunction/tu17_vulnchat/)
  
-# Historical Reading
-
-Read this document ["Smashing the Stack for Fun and Profit"](http://www.phrack.org/issues/49/14.html#article) because it is famous. At the time this paper came out, the knowledge of the existence of buffer overflows was kept secret among a very small group of people. This is the first known document describing the dark magic that was released to the public. Now you are learning about it with a ton of examples on Github. Pretty dope.
-
 # Shellcode 
 
 Calling functions is nice and all, but you know what's better? Calling our own code! Let's learn about shellcode! 
 
+## Historical Reading
+
+Read this document ["Smashing the Stack for Fun and Profit"](http://www.phrack.org/issues/49/14.html#article) because it is famous. At the time this paper came out, the knowledge of the existence of buffer overflows was kept secret among a very small group of people. This is the first known document describing the dark magic that was released to the public. Now you are learning about it with a ton of examples on Github. Pretty dope.
+
 0. Watch this video from LiveOverflow: <https://www.youtube.com/watch?v=HSlhY4Uy8SA>
 1. Work Through [Aviv's Shellcode Notes Part1](unit_03_shell.md).
-2. Do your first shellcode exploit. [Challenge 7](06-bof_shellcode/csaw17_pilot/)
-3. Work through [Aviv's Shellcode Notes](unit_04.md). Take serious time on this. 
-4. Do another. REPS AND SETS. [Challenge 8](06-bof_shellcode/tamu19_pwn3/)
-5. Alright this one is a bit harder. [Challenge 9](06-bof_shellcode/tu18_shellaeasy/)
+
+Now that you know how to handcraft your own artisnal shellcode, remove bad bytes, and troubleshoot execution, let's just cheat and do it the way everyone does it... by using examples from [ExploitDB](https://www.exploit-db.com/shellcodes?platform=linux_x86) or [ShellStorm](http://shell-storm.org/shellcode/)
+
+Using someone else's shellcode is basically always easier, but at least you know how to do it now.
 
 ### Mitigations 
 
@@ -70,10 +70,20 @@ To figure out what mitigations are in place, use the "checksec" program. Once yo
 
 8. Read this [overview on a variety of mitigations](https://resources.infosecinstitute.com/topic/how-to-mitigate-buffer-overflow-vulnerabilities/)
 9. Read this too, because why not? <https://ctf101.org/binary-exploitation/what-is-binary-security/>
-10. Read this [writeup on canaries](7.1-mitigation_canary/readme.md).
-11. Read this [writeup on ASLR and PIE](5.1-mitigation_aslr_pie/readme.md)
-12. Read this [writeup on NX](6.1-mitigation_nx/readme.md)
-13. Learn how to defeat some mitigations with [Aviv's Unit 5 Notes](unit_05.md)
+10. Read this [writeup on ASLR and PIE](5.1-mitigation_aslr_pie/readme.md)
+
+### Some Shellcode Exploits 
+
+11. Write your first shellcode exploit. [Challenge 7](06-bof_shellcode/tamu19_pwn3/)
+12. Work through [Aviv's Shellcode Notes](unit_04.md). Take serious time on this. 
+13. Do another. REPS AND SETS.  [Challenge 8](06-bof_shellcode/csaw17_pilot/)
+14. Alright this one is a bit harder. [Challenge 9](06-bof_shellcode/tu18_shellaeasy/)
+
+### More Mitigations
+
+15. Read this [writeup on canaries](7.1-mitigation_canary/readme.md).
+16. Read this [writeup on NX](6.1-mitigation_nx/readme.md)
+17. Learn how to defeat some mitigations with [Aviv's Unit 5 Notes](unit_05.md)
 
 Mostly, we are going to need to do some ROP, but that's for a later section.
 
