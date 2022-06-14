@@ -14,6 +14,9 @@ I made this remix because I spend a lot of time teaching people Binary Exploitat
 4. [Beginner RE](modules/03-beginner_re/readme.md)
 5. [Overflows](modules/04-Overflows/readme.md)
 6. [Critical Misc.](modules/05-CriticalMisc/readme.md)
+7. [ROP](modules/06-ROP/readme.md)
+8. [More ROP](modules/6.1-MoreROP/readme.md)
+
 
 ## What Makes Nightmare Different?
 `From GuyInATuxedo`
