@@ -46,7 +46,7 @@ Very briefly, we are going to do a quick refresher on the background info needed
 
 1. Read this: <https://www.geeksforgeeks.org/compiling-a-c-program-behind-the-scenes/>. Compile step by step and understand what is going on. 
 
-2. On Linux, after you compile a C program it will be an ELF. There are big ole reference docs on this file format like all file formats, but we will skip that for now and just read brief writeups. As always, do any tutorials in the articles. 
+2. On Linux, after you compile a C program it will be an ELF. There are big ole reference docs on this file format like all file formats, but we will skip that for now. In fact, we won't even waste a bunch of time learning about what ELFs are... do things, don't read about them. However, if you are the type of person who need to know something about what they are working with and you don't trust me, these resources are pretty decent.
    * <https://www.opensourceforu.com/2020/02/understanding-elf-the-executable-and-linkable-format/>
    * <https://linuxhint.com/understanding_elf_file_format/>
 
