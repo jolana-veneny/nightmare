@@ -5,7 +5,7 @@ We'll start with the most common and important of these, format strings.
 # Format Strings
 
 1. Go through [these slides from MBE on format strings](06_lecture.pdf)
-2. Read this [lecture on Format Strings from Aviv.](unit_06.md). Do all the work in the notes and really make sure you understand. 
+2. Read this [lecture on Format Strings from Aviv.](unit_06.md). DO NOT attempt to do the second half on writing with format strings, just read up to "Overwriting the Return Address" and move on. Trust me, it's really complicated, fairly overkill, and doesn't really get seen often.
 3. Do your first format string challenge. [Challenge 1](10-fmt_strings/backdoor17_bbpwn/readme.md)
 4. [Challenge 2](10-fmt_strings/pico18_echo/readme.md)
 5. [Challenge 3](10-fmt_strings/tw16_greeting/readme.md)
