@@ -4,8 +4,10 @@ This section is less tehcnical and more about RE methodology and the tools used 
 2. Check out this [lesson on a few command line tools](terminalStatic.mds).
 3. Next, work through this [lesson on ptrace enabled RE](ptraceLesson.md)
 4. Then do this [GDB tutorial](gdb-gef/readme.md) from Nightmare.
-5. Work through [Aviv's Intro to GDB](gdb-unit_02.md)
-6. Next, install Ghidra, an open source decompiler [using this tutorial](ghidra/readme.md).
-7. Finally, get pwntools, a truly magical tool for CTF adventuring, [using this guide](pwntools/readme.md).
+5. Next, install Ghidra, an open source decompiler [using this tutorial](ghidra/readme.md).
+6. Finally, get pwntools, a truly magical tool for CTF adventuring, [using this guide](pwntools/readme.md).
 
 Alright! You have the tools you need to make things happen!
+
+
+If you want another great GDB tutorial, check this out [Aviv's Intro to GDB](gdb-unit_02.md). You can also just move on.
