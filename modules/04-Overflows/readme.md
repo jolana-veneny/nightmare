@@ -14,10 +14,11 @@ And this finally explains what the hell it all means in regards to how programs 
 
 ### Function Call Basics:
 
-Read this, understand this, just keep going back over this until it all makes sense. This page is the single best reference for how programs actually work on the stack in existence.
+Read this, understand this (eventually!) This page is the single best reference for how programs actually work on the stack in existence.
 
 <https://zhu45.org/posts/2017/Jul/30/understanding-how-function-call-works/>
 
+Don't worry about perfectly understanding this, just read it and move forward. Anytime you are trying to think about this stuff, this is a great reference to jump start your brain.
 
 # Overflows
 
