@@ -35,7 +35,13 @@ This variety of overflow is very easy to understand, so we start with variable o
 The core idea is very straightforward, a comparison is made against a variable the user is not expected to have control over, and using an overflow, we have overwritten that variable. Use the tools you've learned so far, especially Ghidra to figure out the write offsets. 
 
 3. Do your first overflow! [Challenge 1](04-bof_variable/tamu19_pwn1/)
+
+Before we do this next one, [check out this explanation of what exploit.py is](https://github.com/hoppersroppers/nightmare/blob/master/modules/04-Overflows/pwntools.md):
+
 4. Next one up! [Challenge 2](04-bof_variable/tw17_justdoit/)
+
+Alright, now you're going to rewrite your last two exploits to not use pwntools. [Living off the Land Byte Slinging Tutorial](https://github.com/hoppersroppers/nightmare/blob/master/modules/04-Overflows/slingingbytes.md). Do whichever of these you want.
+
 5. This one is a bit harder [Challenge 3](04-bof_variable/csaw18_boi/)
 
 ### Call some Functions
