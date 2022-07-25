@@ -9,5 +9,6 @@ This section is less tehcnical and more about RE methodology and the tools used 
 
 Alright! You have the tools you need to make things happen!
 
+# [NEXT: Chapter 4: Beginner RE](https://github.com/hoppersroppers/nightmare/blob/master/modules/03-beginner_re/readme.md)
 
-If you want another great GDB tutorial, check this out [Aviv's Intro to GDB](gdb-unit_02.md). You can also just move on.
+If you want another great GDB tutorial for review, check this out [Aviv's Intro to GDB](gdb-unit_02.md). You can also just move on, this one is pretty long.
