@@ -12,17 +12,26 @@ We'll start with the most common and important of these, format strings.
 
 # Bad Seed
 
-These are way less common but pop up all the time. The basic idea is if you know how the randomness works, it's not actually random.
+These are way less common but still pop up all the time. The basic idea is if you know how the randomness works, it's not actually random.
 
 1. [Challenge 4](09-bad_seed/h3_time/readme.md)
-2. [Challenge 5](09-bad_seed/hsctf19_tuxtalkshow/readme.md)
-3. [Challenge 6](09-bad_seed/sunshinectf17_prepared/readme.md)
+
+Just do one of these, they are are a bit rare, but good to know they exist. If you want another example here are two, but just move on.
+
+* [Challenge 5](09-bad_seed/hsctf19_tuxtalkshow/readme.md)
+* [Challenge 6](09-bad_seed/sunshinectf17_prepared/readme.md)
 
 # Partial Overwrite
 
 Partial overwrites are where we get after the low values of an address. They are most commmonly used for ASLR defeat, but are also useful when we only can overwrite part of the return address.
 
 1. [tu17_vulnchat2](15-partial_overwrite/tu17_vulnchat2)
-2. [tamu19_pwn2](15-partial_overwrite/tamu19_pwn2)
-3. [hacklu15_stackstuff](15-partial_overwrite/hacklu15_stackstuff)
 
+Just do one of these, they are are a bit rare, but good to know they exist. If you want another example here are two, but just move on.
+
+
+* [tamu19_pwn2](15-partial_overwrite/tamu19_pwn2)
+* [hacklu15_stackstuff](15-partial_overwrite/hacklu15_stackstuff)
+
+
+# [NEXT: Chapter 7: ROP](https://github.com/hoppersroppers/nightmare/blob/master/modules/06-ROP/readme.md)
