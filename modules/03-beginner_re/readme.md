@@ -48,3 +48,5 @@ As a note, NoraCodes uses Radare for the examples, you should be using Ghidra. T
 5. Do you beleaf in life after love? [Challenge 4](csaw19_beleaf/)
 
 This is a good array of challenges and you should have some decent understanding of what these types of challenges look like. 
+
+# [NEXT: Chapter 5: Basic Overflows](https://github.com/hoppersroppers/nightmare/blob/master/modules/04-Overflows/readme.md)
