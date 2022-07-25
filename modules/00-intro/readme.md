@@ -59,4 +59,4 @@ Very briefly, we are going to do a quick refresher on the background info needed
 This will not have made you an expert in C compilation but it is enough to get you started. 
 
 
-[NEXT: Chapter 2](https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md)
+# [NEXT: Chapter 2: Intro. to Assembly](https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md)
