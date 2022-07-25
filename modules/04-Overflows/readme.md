@@ -94,3 +94,5 @@ To figure out what mitigations are in place, use the "checksec" program. Once yo
 
 Mostly, we are going to need to do some ROP, but that's for a later section.
 
+# [NEXT: Chapter 6: Critical Miscellaneous](https://github.com/hoppersroppers/nightmare/blob/master/modules/05-CriticalMisc/readme.md)
+
