@@ -1,5 +1,7 @@
 # Intro
 `Written by GuyInATuxedo`
+
+
 So I just want to say a few things for the people who are super new to binary exploitation / reverse engineering. If you are already familiar with assembly code / binary exploitation and reverse engineering, and tools like ghidra / pwntools / gdb, feel free to skip this whole section (and any other content you already know). The purpose of this section is to give an introduction to the super new people.
 
 ## Binary Exploitation
@@ -55,3 +57,6 @@ Very briefly, we are going to do a quick refresher on the background info needed
 4. After that, work through [Aviv's Unit 01 notes](unit_01.md) on C programming and compilation. Do all of the work shown in the lecture.
 
 This will not have made you an expert in C compilation but it is enough to get you started. 
+
+
+[NEXT: Chapter 2](https://github.com/hoppersroppers/nightmare/blob/master/modules/01-intro_assembly/readme.md)
