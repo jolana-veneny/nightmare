@@ -73,3 +73,5 @@ Finally, work through [the Aviv Assembly notes](unit_02.md) and do the assignmen
 Watch this video from the great hacker LiveOverflow on the [CPU and Assembler](https://www.youtube.com/watch?v=6jSKldt7Eqs). You'll be seeing more of his content.
 
 Read this and make sure it sort of makes sense: <https://revers.engineering/applied-re-basic-architecture/>. You absolutely should move on even if it doesn't, this whole course is meant to keep you moving forward before you understand exactly what is going on.
+
+# [NEXT: Chapter 3: Intro. to Tooling](https://github.com/hoppersroppers/nightmare/blob/master/modules/02-intro_tooling/readme.md)
